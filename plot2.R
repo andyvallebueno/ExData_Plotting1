@@ -20,12 +20,9 @@ plot2<- function (workingdirectory) {
   Timeslist<-data$Time
   DateTime<- Dateslist + Timeslist
   
-  ## 4. Plot
+  ## 4. Plot & save plot
+  png("plot2.png", width=480, height=480)
   plot(DateTime, data$Global_active_power, ylab = "Global Active Power (kilowatts)", type = "l", xlab ="")
- 
-  ## 5. Save plot to PNG
-  
-  dev.copy(png, file = "plot2.png")
   dev.off()
   
 }

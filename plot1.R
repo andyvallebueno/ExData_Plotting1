@@ -15,13 +15,9 @@ plot1<- function (workingdirectory) {
   data1<-subset(data1, month(Date) == 02, select = Date:Sub_metering_3)
   data<-subset(data1, day(Date)<3, select = Date:Sub_metering_3)
   
-  ## 3. Plot
-  
+  ## 3. Plot & save plot to PNG
+  png("plot1.png", width=480, height=480)
   hist(data$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
-  
-  ## 4. Save plot to PNG
-  
-  dev.copy(png, file = "plot1.png")
   dev.off()
   
 }

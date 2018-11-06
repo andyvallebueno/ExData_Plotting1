@@ -20,16 +20,13 @@ plot3<- function (workingdirectory) {
   Timeslist<-data$Time
   DateTime<- Dateslist + Timeslist
   
-  ## 4. Plot
+  ## 4. Plot & save plot
+  png("plot3.png", width=480, height=480)
   plot(DateTime, data$Sub_metering_1, ylab = "Energy sub metering", type = "n", xlab ="", cex =0.8)
   lines(Both, data$Sub_metering_1)
   lines(Both, data$Sub_metering_2, col="red")
   lines(Both, data$Sub_metering_3, col="blue")
   legend("topright", col=c("black","red","blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex = 0.8, lty = c(1,1,1))
-  
-  ## 5. Save plot to PNG
-  
-  dev.copy(png, file = "plot3.png")
   dev.off()
   
 }

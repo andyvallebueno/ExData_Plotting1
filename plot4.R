@@ -21,6 +21,7 @@ plot4<- function (workingdirectory) {
   DateTime<- Dateslist + Timeslist
   
   ## 4. Plot
+  png("plot4.png", width=480, height=480)
   par(mfrow=c(2,2), mar = c(4,4,4,4))
   
   ##    Plot 1
@@ -39,9 +40,6 @@ plot4<- function (workingdirectory) {
   ##    Plot 4
   plot(Both, data3$Global_reactive_power, ylab = "Global_reactive_power", type = "l", xlab ="datetime", cex = 0.8)
   
-  ## 5. Save plot to PNG
-  
-  dev.copy(png, file = "plot4.png")
   dev.off()
   
 }
